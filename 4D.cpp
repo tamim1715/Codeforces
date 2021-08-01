@@ -38,6 +38,7 @@ int main()
        }
        if(i==-1) cout<<"YES"<<endl;
        else cout<<"NO"<<endl;
+    //here//
     //    for(int i=0; i<a.length(); i++)
     //    {
     //        if(i+b.length()-1>=a.length()) break;
