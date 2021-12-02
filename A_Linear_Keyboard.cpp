@@ -7,7 +7,7 @@
 #include<iomanip>
 #include<set>
 #include<queue>
-
+#include<cstring>
 
 using namespace std;
 
@@ -64,29 +64,42 @@ struct node{
 
 
 
+
 int main()
 {
-    //freopen("tamim.txt", "w", stdout);
+    // freopen("tamim.txt", "w", stdout);
+    // freopen("tamim1.txt", "r", stdin);
     fast();
     int tst;
     cin>>tst;
     while(tst--) 
     {
-        int n;
-        cin>>n;
-        int t[n];
-        for(int i=0; i<n; i++) cin>>t[i];
-        int mx=t[0];
-        for(int i=1; i<n; i++)
-        {
-            mx=(mx&t[i]);
+        ll x,n,p,ans;
+        cin>>x>>n;
+        if(n==0){
+            cout<<x<<endl;
+            continue;
         }
-        cout<<mx<<endl;
-        
+        if(n==1){
+            if(x%2) cout<<x+1<<endl;
+            else cout<<x-1<<endl;
+            continue;
+        }
+        p=n;
+        ans=x;
+        if(n%2) p--;
+        p/=2;
+        if(p%2&&x%2) ans--;
+        else if(p%2) ans++;
+        if(n%2){
+            if(ans%2) ans+=n;
+            else ans-=n;
+        }
+        cout<<ans<<endl;
+
+
 
     }
-
-
     return 0;
 }
 
